@@ -61,22 +61,22 @@ function calculateBMI(e) {
         category = 'Kekurangan Berat Badan';
         advice = 'Perbanyak asupan nutrisi seimbang dan protein.';
         badgeClass = 'text-yellow-700 bg-yellow-100 border border-yellow-200';
-        imageSrc = 'assets/cipeng.png';
+        imageSrc = 'cipeng.png';
     } else if (bmi >= 18.5 && bmi < 24.9) {
         category = 'Normal (Ideal)';
         advice = 'Pertahankan pola makan sehat dan olahraga teratur!';
         badgeClass = 'text-green-700 bg-green-100 border border-green-200';
-        imageSrc = 'assets/standar.png';
+        imageSrc = 'standar.png';
     } else if (bmi >= 25 && bmi < 29.9) {
         category = 'Kelebihan Berat Badan';
         advice = 'Kurangi gula & lemak, tingkatkan aktivitas fisik.';
         badgeClass = 'text-orange-700 bg-orange-100 border border-orange-200';
-        imageSrc = 'assets/gembrot.png';
+        imageSrc = 'gembrot.png';
     } else {
         category = 'Obesitas';
         advice = 'Sangat disarankan konsultasi ke dokter untuk program diet.';
         badgeClass = 'text-red-700 bg-white border border-red-200';
-        imageSrc = 'assets/gembrot.png';
+        imageSrc = 'gembrot.png';
     }
 
     const defaultView = document.getElementById('defaultView');
@@ -469,4 +469,5 @@ function consultDoctor(doctorName) {
     const message = `Halo, saya ingin berkonsultasi dengan ${doctorName} mengenai gizi dan diet.`;
     const whatsappUrl = `https://wa.me/6285819513747?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank'); 
+
 }
