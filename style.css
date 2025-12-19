@@ -1,0 +1,68 @@
+/* --- GLOBAL --- */
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #334155; /* Slate 700 - Warna teks utama */
+}
+
+/* --- COLORS --- */
+.text-coral { color: #fa4e67; }
+.bg-coral { background-color: #fa4e67; }
+.border-coral { border-color: #fa4e67; }
+.hover\:bg-coral:hover { background-color: #fa4e67; }
+.focus\:border-coral:focus { border-color: #fa4e67; }
+
+/* --- DECORATION --- */
+.decorative-circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(50px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* --- GAME STYLES --- */
+.game-option-card:active {
+    transform: scale(0.95);
+}
+
+/* Classes for game feedback animations */
+.correct-choice {
+    background-color: #dcfce7 !important; /* Green 100 */
+    border-color: #22c55e !important; /* Green 500 */
+}
+
+.wrong-choice {
+    background-color: #fee2e2 !important; /* Red 100 */
+    border-color: #ef4444 !important; /* Red 500 */
+}
+
+html { scroll-behavior: smooth; }
+
+/* --- MODAL SCROLL --- */
+#detailModal {
+    /* Mencegah scroll pada body saat modal terbuka */
+    overscroll-behavior: contain;
+}
+
+/* Checkbox Style Override if using Tailwind Forms, or simple CSS */
+input[type="checkbox"]:checked {
+    background-color: #fa4e67;
+    border-color: #fa4e67;
+}
+
+/* Transitions */
+.transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+}

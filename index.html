@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth snap-y snap-mandatory h-screen overflow-y-scroll">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>obishealthpedia</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Open Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Ikon FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Style Kustom -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white text-slate-700 antialiased font-opensans">
+
+<!-- NAVBAR -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-white/95 backdrop-blur-sm shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <div class="flex items-center gap-3 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <!-- Icon Logo Ditambahkan Di Sini -->
+                    <img src="assets/obishealthpedia.png" alt="Logo" class="h-10 w-10 rounded-full object-cover border border-red-100 shadow-sm">
+                    <span class="text-2xl md:text-3xl font-bold tracking-tight text-coral">obishealthpedia</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center font-bold text-sm tracking-wide text-slate-600">
+                    <a href="#home" class="hover:text-coral transition">HOME</a>
+                    <a href="#intro" class="hover:text-coral transition">INTRO</a>
+                    <a href="#faktor" class="hover:text-coral transition">FAKTOR</a>
+                    <a href="#game" class="hover:text-coral transition">GAME</a>
+                    <a href="#stats" class="hover:text-coral transition">DATA</a>
+                    <a href="#bmi" class="bg-coral text-white px-6 py-2 rounded-full hover:bg-red-500 transition shadow-md shadow-red-200">
+                        CEK BMI
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-700 text-2xl focus:outline-none">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 p-4 space-y-4 shadow-lg absolute w-full z-50">
+            <a href="#home" class="block font-bold hover:text-coral text-slate-600">HOME</a>
+            <a href="#intro" class="block font-bold hover:text-coral text-slate-600">INTRO</a>
+            <a href="#faktor" class="block font-bold hover:text-coral text-slate-600">FAKTOR</a>
+            <a href="#game" class="block font-bold hover:text-coral text-slate-600">GAME</a>
+            <a href="#stats" class="block font-bold hover:text-coral text-slate-600">DATA</a>
+            <a href="#bmi" class="block font-bold text-coral">CEK BMI</a>
+        </div>
+    </nav>
+
+    <!-- 1. HERO SECTION (CORAL) - FULL SCREEN -->
+    <section id="home" class="min-h-screen snap-start flex flex-col justify-center items-center bg-coral text-white text-center relative overflow-hidden pt-20">
+        <div class="decorative-circle bg-white/10 w-96 h-96 -top-20 -left-20"></div>
+        <div class="decorative-circle bg-white/10 w-72 h-72 bottom-10 right-10"></div>
+        <div class="decorative-circle bg-white/5 w-48 h-48 top-40 right-20"></div>
+        
+        <div class="max-w-4xl px-6 relative z-10 animate-fade-in">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
+                HEALTHY BODY,<br>HEALTHY LIFE ❤︎
+            </h1>
+            <p class="text-lg md:text-xl font-medium opacity-90 mb-10 max-w-2xl mx-auto">
+                Pahami tubuhmu, cegah obesitas sejak dini bersama Obis.
+            </p>
+            <a href="#intro" class="inline-block bg-white text-coral font-bold py-4 px-10 rounded-full hover:bg-slate-100 transition shadow-xl transform hover:-translate-y-1">
+                MULAI SEKARANG
+            </a>
+        </div>
+    </section>
+
+    <!-- 2. INTRO SECTION (WHITE) - FULL SCREEN -->
+    <section id="intro" class="min-h-screen snap-start flex flex-col justify-center items-center bg-white relative pt-20">
+        <div class="max-w-7xl mx-auto px-6 w-full">
+            <div class="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+                <!-- Maskot Area (Left) -->
+                <div class="w-full md:w-5/12 flex justify-center">
+                    <div class="relative group">
+                        <div class="w-64 h-64 md:w-80 md:h-80 bg-coral rounded-full flex items-center justify-center shadow-2xl relative ring-8 ring-red-50 overflow-hidden transform transition duration-300 group-hover:scale-105 group-hover:shadow-3xl">
+                            <img src="assets/obis.png" alt="Maskot Obis" class="w-full h-full object-cover rounded-full">
+                        </div>
+                         <div class="absolute -bottom-6 right-0 left-0 flex justify-center z-10">
+                            <div class="bg-white text-coral font-bold px-8 py-2 rounded-full shadow-lg border-2 border-red-50 text-sm md:text-base transform transition group-hover:-translate-y-1">
+                                HAIII, Aku Obis!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Content Area (Right: Text + Definisi Box Sejajar) -->
+                <div class="w-full md:w-7/12 flex flex-col gap-8">
+                    <!-- Text Area -->
+                    <div class="text-center md:text-left space-y-4">
+                        <div class="inline-block px-4 py-1 bg-red-50 text-coral rounded-full text-xs font-bold tracking-wider mb-2">SIAPA AKU?</div>
+                        <h2 class="text-3xl md:text-5xl font-extrabold text-coral tracking-tight leading-tight">
+                            𐙚 KENALAN DULU <br class="hidden md:block"> YUK SAMA OBIS!
+                        </h2>
+                        <p class="text-lg md:text-xl text-slate-600 italic leading-relaxed font-light border-l-4 border-coral pl-6">
+                            "Aku bakal nemenin kamu buat belajar lebih
+                             <BR> jauh seputar obesitas dan cara hidup sehat."
+                        </p>
+                    </div>
+
+                    <!-- Definisi Box (Sekarang berwarna Coral dan berada di kolom kanan) -->
+                    <div class="bg-coral rounded-[2.5rem] p-8 md:p-10 border-4 border-red-100/30 text-center relative overflow-hidden shadow-xl transform hover:scale-[1.01] transition duration-300">
+                        <i class="fa-solid fa-quote-left text-5xl text-white/20 absolute top-6 left-6"></i>
+                        <div class="relative z-10 text-white">
+                            <h2 class="text-2xl md:text-3xl font-bold mb-4 tracking-tight uppercase">Apa Itu Obesitas?</h2>
+                            <p class="text-base md:text-lg leading-loose font-medium opacity-95">
+                                Menurut <strong>WHO</strong>, obesitas adalah penumpukan lemak abnormal atau berlebihan dalam tubuh yang menimbulkan risiko kesehatan.
+                            </p>
+                        </div>
+                        <!-- Dekorasi halus -->
+                        <div class="absolute bottom-0 right-0 w-32 h-32 bg-white/10 rounded-full filter blur-3xl translate-y-1/2 translate-x-1/2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 1. HERO SECTION (CORAL) -->
+    <!-- 3. FAKTOR SECTION (CORAL) - CLICKABLE CARDS -->
+    <section id="faktor" class="min-h-screen snap-start flex flex-col justify-center bg-coral text-white relative overflow-hidden pt-20">
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 30px 30px;"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 text-white">FAKTOR PENYEBAB</h2>
+            <div class="w-24 h-1 bg-white mx-auto mb-10 md:mb-16 rounded-full"></div>
+            
+            <!-- Grid Layout: 1 col (mobile), 2 cols (tablet), 6 cols (desktop) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 md:gap-8 auto-rows-fr">
+                
+                <!-- Card 1: Span 2 cols di desktop (Total 6/2 = 3 item per baris) -->
+                <div onclick="openFactorModal('polaMakan')" class="lg:col-span-2 factor-card p-6 md:p-8 rounded-2xl bg-white border-2 border-white/20 shadow-xl transition group cursor-pointer hover:bg-red-50 h-full flex flex-col">
+                    <div class="text-coral text-4xl md:text-5xl mb-4 md:mb-6 group-hover:scale-110 transition duration-300">
+                        <i class="fa-solid fa-burger"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3 tracking-wide text-coral">POLA MAKAN BURUK</h3>
+                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed flex-grow">Konsumsi kalori tinggi (gula, lemak jenuh) yang melebihi kebutuhan tubuh.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div onclick="openFactorModal('stress')" class="lg:col-span-2 factor-card p-6 md:p-8 rounded-2xl bg-white border-2 border-white/20 shadow-xl transition group cursor-pointer hover:bg-red-50 h-full flex flex-col">
+                    <div class="text-coral text-4xl md:text-5xl mb-4 md:mb-6 group-hover:scale-110 transition duration-300">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3 tracking-wide text-coral">STRESS & KEBIASAAN</h3>
+                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed flex-grow">Stress memicu hormon yang meningkatkan nafsu makan berlebih.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div onclick="openFactorModal('lingkungan')" class="lg:col-span-2 factor-card p-6 md:p-8 rounded-2xl bg-white border-2 border-white/20 shadow-xl transition group cursor-pointer hover:bg-red-50 h-full flex flex-col">
+                    <div class="text-coral text-4xl md:text-5xl mb-4 md:mb-6 group-hover:scale-110 transition duration-300">
+                        <i class="fa-solid fa-city"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3 tracking-wide text-coral">LINGKUNGAN</h3>
+                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed flex-grow">Lingkungan di mana makanan tidak sehat sangat mudah diakses.</p>
+                </div>
+
+                <!-- Card 4: Start di kolom 2 agar berada di tengah (Offset 1 kolom di kiri) -->
+                <div onclick="openFactorModal('genetik')" class="lg:col-span-2 lg:col-start-2 factor-card p-6 md:p-8 rounded-2xl bg-white border-2 border-white/20 shadow-xl transition group cursor-pointer hover:bg-red-50 h-full flex flex-col">
+                    <div class="text-coral text-4xl md:text-5xl mb-4 md:mb-6 group-hover:scale-110 transition duration-300">
+                        <i class="fa-solid fa-dna"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3 tracking-wide text-coral">GENETIK</h3>
+                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed flex-grow">Riwayat keluarga dapat mempengaruhi metabolisme tubuh.</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div onclick="openFactorModal('kurangGerak')" class="lg:col-span-2 factor-card p-6 md:p-8 rounded-2xl bg-white border-2 border-white/20 shadow-xl transition group cursor-pointer hover:bg-red-50 flex flex-col h-full">
+                    <div class="text-coral text-4xl md:text-5xl mb-4 md:mb-6 group-hover:scale-110 transition duration-300 mx-auto lg:mx-0">
+                        <i class="fa-solid fa-person-walking-arrow-right"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3 tracking-wide text-coral">KURANG GERAK</h3>
+                    <p class="text-slate-500 text-xs md:text-sm leading-relaxed flex-grow">Gaya hidup "Mager" menyebabkan penumpukan kalori menjadi lemak.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 4. GAME SECTION (WHITE) - FULL SCREEN -->
+    <section id="game" class="min-h-screen snap-start flex flex-col justify-center bg-white text-center relative pt-20">
+        <div class="max-w-4xl mx-auto px-6 w-full">
+            <h2 class="text-3xl md:text-5xl font-bold text-coral mb-10 tracking-tight">GAME AREA</h2>
+            
+            <div class="bg-red-50 p-6 md:p-12 rounded-[2rem] shadow-2xl border-4 border-red-100 flex flex-col items-center min-h-[500px] justify-center relative overflow-hidden transition-all duration-300">
+                
+                <!-- 0. GAME MENU (Pilih Game) -->
+                <div id="gameMenu" class="w-full animate-fade-in grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div onclick="showGame('food')" class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl cursor-pointer hover:border-coral border-2 border-transparent transition group">
+                        <div class="text-6xl mb-4 group-hover:scale-110 transition">🍎</div>
+                        <h3 class="text-2xl font-bold text-slate-700 mb-2">Pilih Makanan</h3>
+                        <p class="text-slate-500 text-sm">Tebak mana makanan yang lebih sehat dan kumpulkan poin!</p>
+                    </div>
+                    <div onclick="showGame('habit')" class="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl cursor-pointer hover:border-coral border-2 border-transparent transition group">
+                        <div class="text-6xl mb-4 group-hover:scale-110 transition">📅</div>
+                        <h3 class="text-2xl font-bold text-slate-700 mb-2">Daily Habit Challenge</h3>
+                        <p class="text-slate-500 text-sm">Simulasi 7 hari membangun kebiasaan sehat anti-obesitas.</p>
+                    </div>
+                </div>
+
+                <!-- 1. GAME: PILIH MAKANAN (Container) -->
+                <div id="foodGame" class="hidden w-full">
+                    <!-- Screen 1: Start -->
+                    <div id="gameStartScreen" class="w-full animate-fade-in">
+                        <div class="bg-white w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md border-2 border-red-100">
+                            <i class="fa-solid fa-utensils text-5xl text-coral"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-700 mb-4">Pilih Makanan Sehat</h3>
+                        <p class="text-lg text-slate-500 mb-8 max-w-md mx-auto">Pilih makanan yang lebih sehat di antara dua pilihan untuk mendapatkan poin!</p>
+                        <div class="flex gap-4 justify-center items-center">
+                            <button onclick="backToMenu()" class="text-coral font-bold hover:text-red-600 transition px-4">Menu Utama</button>
+                            <button onclick="startGame()" class="bg-coral text-white font-bold py-3 px-8 rounded-xl hover:bg-red-500 transition transform active:scale-95 shadow-lg shadow-red-200">
+                                Mulai Main
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Screen 2: Gameplay -->
+                    <div id="gamePlayScreen" class="hidden w-full h-full flex flex-col justify-between">
+                         <div class="flex justify-between items-center w-full mb-8 px-4">
+                            <div class="flex items-center gap-3">
+                                <button onclick="backToMenu()" class="text-slate-400 hover:text-coral transition" title="Kembali ke Menu">
+                                    <i class="fa-solid fa-arrow-left text-lg"></i>
+                                </button>
+                                <div class="text-slate-500 font-bold">Soal: <span id="questionCount">1</span>/5</div>
+                            </div>
+                            <div class="bg-coral text-white px-4 py-1 rounded-full font-bold shadow-md">Skor: <span id="score">0</span></div>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-700 mb-8">Mana yang lebih sehat?</h3>
+                        <div class="grid grid-cols-2 gap-4 md:gap-8 w-full">
+                            <button id="btnOptionA" onclick="checkAnswer(0)" class="game-option-card bg-white border-2 border-red-100 hover:border-coral rounded-2xl p-6 transition transform hover:scale-105 group relative overflow-hidden w-full shadow-sm">
+                                <div class="text-6xl mb-4 group-hover:scale-110 transition" id="iconA">🍎</div>
+                                <p class="font-bold text-slate-700 text-lg" id="textA">Apel</p>
+                            </button>
+                            <button id="btnOptionB" onclick="checkAnswer(1)" class="game-option-card bg-white border-2 border-red-100 hover:border-coral rounded-2xl p-6 transition transform hover:scale-105 group relative overflow-hidden w-full shadow-sm">
+                                <div class="text-6xl mb-4 group-hover:scale-110 transition" id="iconB">🍔</div>
+                                <p class="font-bold text-slate-700 text-lg" id="textB">Burger</p>
+                            </button>
+                        </div>
+                        <div id="feedback" class="h-8 mt-6 font-bold text-lg"></div>
+                    </div>
+
+                    <!-- Screen 3: Game Over -->
+                    <div id="gameOverScreen" class="hidden w-full animate-fade-in">
+                        <div class="text-6xl mb-4">🏆</div>
+                        <h3 class="text-3xl font-bold text-slate-800 mb-2">Permainan Selesai!</h3>
+                        <p class="text-slate-500 mb-6">Skor Akhir Kamu:</p>
+                        <div class="text-6xl font-black text-coral mb-8" id="finalScore">0</div>
+                        <div class="flex gap-4 justify-center items-center">
+                            <button onclick="backToMenu()" class="text-coral font-bold hover:text-red-600 transition px-4">Menu Utama</button>
+                            <button onclick="startGame()" class="bg-coral text-white font-bold py-3 px-8 rounded-xl hover:bg-red-500 transition shadow-lg shadow-red-200">
+                                Main Lagi
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. GAME: DAILY HABIT (Container Baru) -->
+                <div id="habitGame" class="hidden w-full">
+                    <!-- Start Screen -->
+                    <div id="habitStartScreen" class="w-full animate-fade-in">
+                        <div class="bg-white w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 shadow-md border-2 border-red-100">
+                            <i class="fa-solid fa-calendar-check text-5xl text-coral"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-700 mb-4">Tantangan 7 Hari</h3>
+                        <p class="text-lg text-slate-500 mb-8 max-w-md mx-auto">
+                            Simulasikan pilihan hidupmu selama 7 hari. Setiap keputusan akan mempengaruhi risiko obesitasmu.
+                        </p>
+                        <div class="flex gap-4 justify-center items-center">
+                            <button onclick="backToMenu()" class="text-coral font-bold hover:text-red-600 transition px-4">Kembali</button>
+                            <button onclick="startHabitGame()" class="bg-coral text-white font-bold py-3 px-8 rounded-xl hover:bg-red-500 transition transform active:scale-95 shadow-lg shadow-red-200">
+                                Mulai Tantangan
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Day Play Screen -->
+                    <div id="habitPlayScreen" class="hidden w-full h-full flex flex-col justify-between text-left">
+                        <div class="flex justify-between items-center w-full mb-6 border-b border-red-100 pb-4">
+                            <div class="flex items-center gap-3">
+                                <button onclick="backToMenu()" class="text-slate-400 hover:text-coral transition" title="Kembali ke Menu">
+                                    <i class="fa-solid fa-arrow-left text-lg"></i>
+                                </button>
+                                <div>
+                                    <h4 class="text-coral font-bold text-xl">HARI KE-<span id="dayCount">1</span></h4>
+                                    <p class="text-slate-400 text-xs">Pilih maksimal 3 kebiasaan</p>
+                                </div>
+                            </div>
+                            <div class="bg-white border-2 border-red-100 text-slate-600 px-4 py-1 rounded-full font-bold text-sm">
+                                Skor: <span id="habitScore">0</span>
+                            </div>
+                        </div>
+
+                        <h3 class="text-lg font-bold text-slate-700 mb-4 text-center">Apa yang kamu lakukan hari ini?</h3>
+                        
+                        <!-- Checkboxes Container -->
+                        <div id="habitOptions" class="grid grid-cols-1 gap-3 mb-6">
+                            <!-- Options injected by JS -->
+                        </div>
+
+                        <div id="habitFeedback" class="hidden bg-white p-4 rounded-xl border-l-4 border-coral mb-4 shadow-sm text-sm text-slate-600 animate-fade-in">
+                            <!-- Feedback injected by JS -->
+                        </div>
+
+                        <button id="habitNextBtn" onclick="submitHabitDay()" class="w-full bg-coral text-white font-bold py-3 rounded-xl hover:bg-red-500 transition shadow-lg shadow-red-200 mt-auto">
+                            Konfirmasi Pilihan
+                        </button>
+                    </div>
+
+                    <!-- Result Screen -->
+                    <div id="habitResultScreen" class="hidden w-full animate-fade-in">
+                        <div id="habitResultIcon" class="text-6xl mb-4">🌟</div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-2">Tantangan Selesai!</h3>
+                        <p class="text-slate-500 mb-4">Total Skor Kesehatanmu:</p>
+                        <div class="text-5xl font-black text-coral mb-6" id="habitFinalScore">0</div>
+                        
+                        <div class="bg-white p-6 rounded-2xl shadow-sm border border-red-50 mb-8 text-left">
+                            <h4 class="font-bold text-slate-700 mb-2">Analisa:</h4>
+                            <p id="habitResultText" class="text-slate-600 text-sm leading-relaxed"></p>
+                        </div>
+
+                        <div class="flex gap-4 justify-center items-center">
+                            <button onclick="backToMenu()" class="text-coral font-bold hover:text-red-600 transition px-4">Menu Utama</button>
+                            <button onclick="startHabitGame()" class="bg-coral text-white font-bold py-3 px-8 rounded-xl hover:bg-red-500 transition shadow-lg shadow-red-200">
+                                Coba Lagi
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. STATS SECTION (CORAL) - FULL SCREEN -->
+    <section id="stats" class="min-h-screen snap-start flex flex-col justify-center bg-coral text-white relative overflow-hidden pt-20">
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 30px 30px;"></div>
+
+        <div class="max-w-7xl mx-auto px-6 text-center relative z-10 w-full">
+            <h2 class="text-2xl md:text-3xl font-bold mb-16 bg-white inline-block px-10 py-3 rounded-full backdrop-blur-sm border border-white/30 shadow-lg text-coral">TAHUKAH KAMU?</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <a href="https://ayosehat.kemkes.go.id/" target="_blank" class="p-8 rounded-[2rem] bg-white shadow-xl hover:shadow-2xl hover:-translate-y-2 transition duration-300 group flex flex-col items-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-red-50 rounded-bl-full -mr-4 -mt-4 z-0"></div>
+                    <div class="relative z-10 w-full flex flex-col items-center h-full">
+                        <div class="text-6xl md:text-7xl font-black mb-4 text-coral">37,8%</div>
+                        <div class="h-1 w-16 bg-red-100 mx-auto mb-6 rounded-full"></div>
+                        <p class="font-medium text-slate-600 text-lg mb-8 leading-relaxed">Penduduk dewasa Indonesia mengalami overweight/obesitas (SKI 2023).</p>
+                        <div class="mt-auto px-8 py-3 bg-red-50 rounded-full text-sm font-bold text-coral group-hover:bg-coral group-hover:text-white transition flex items-center gap-2 shadow-sm">
+                            Lihat Data <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight" target="_blank" class="p-8 rounded-[2rem] bg-white shadow-xl hover:shadow-2xl hover:-translate-y-2 transition duration-300 group flex flex-col items-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-red-50 rounded-bl-full -mr-4 -mt-4 z-0"></div>
+                    <div class="relative z-10 w-full flex flex-col items-center h-full">
+                        <div class="text-6xl md:text-7xl font-black mb-4 text-coral">1 M+</div>
+                        <div class="h-1 w-16 bg-red-100 mx-auto mb-6 rounded-full"></div>
+                        <p class="font-medium text-slate-600 text-lg mb-8 leading-relaxed">Orang di dunia merupakan penyandang obesitas (WHO 2022).</p>
+                        <div class="mt-auto px-8 py-3 bg-red-50 rounded-full text-sm font-bold text-coral group-hover:bg-coral group-hover:text-white transition flex items-center gap-2 shadow-sm">
+                            Lihat Data <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight" target="_blank" class="p-8 rounded-[2rem] bg-white shadow-xl hover:shadow-2xl hover:-translate-y-2 transition duration-300 group flex flex-col items-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-red-50 rounded-bl-full -mr-4 -mt-4 z-0"></div>
+                    <div class="relative z-10 w-full flex flex-col items-center h-full">
+                        <div class="text-6xl md:text-7xl font-black mb-4 text-coral">9 JT</div>
+                        <div class="h-1 w-16 bg-red-100 mx-auto mb-6 rounded-full"></div>
+                        <p class="font-medium text-slate-600 text-lg mb-8 leading-relaxed">Kematian terkait dampak obesitas setiap tahun (Global).</p>
+                        <div class="mt-auto px-8 py-3 bg-red-50 rounded-full text-sm font-bold text-coral group-hover:bg-coral group-hover:text-white transition flex items-center gap-2 shadow-sm">
+                            Lihat Data <i class="fa-solid fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. BMI SECTION (WHITE) - FULL SCREEN -->
+    <section id="bmi" class="min-h-screen snap-start flex flex-col justify-center bg-white relative pt-20">
+        <div class="max-w-5xl mx-auto px-6 w-full">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-coral mb-4 tracking-tight">CEK BMI MU DISINI</h2>
+                <p class="text-slate-500 font-medium">*Body Mass Index (Indeks Massa Tubuh)</p>
+            </div>
+
+            <div class="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col md:flex-row border border-red-100">
+                <div class="p-10 md:p-14 w-full md:w-1/2 flex flex-col justify-center">
+                    <form id="bmiForm" onsubmit="calculateBMI(event)">
+                        <div class="mb-8">
+                            <label class="block text-slate-400 text-xs font-bold uppercase mb-2 tracking-widest">Berat Badan (Kg)</label>
+                            <div class="relative">
+                                <input type="number" id="weight" class="w-full bg-transparent text-slate-700 font-bold text-3xl border-b-2 border-slate-200 focus:border-coral outline-none py-2 transition placeholder-slate-300" placeholder="0" required>
+                                <i class="fa-solid fa-weight-hanging absolute right-0 top-2 text-slate-300 text-2xl"></i>
+                            </div>
+                        </div>
+                        <div class="mb-12">
+                            <label class="block text-slate-400 text-xs font-bold uppercase mb-2 tracking-widest">Tinggi Badan (Cm)</label>
+                            <div class="relative">
+                                <input type="number" id="height" class="w-full bg-transparent text-slate-700 font-bold text-3xl border-b-2 border-slate-200 focus:border-coral outline-none py-2 transition placeholder-slate-300" placeholder="0" required>
+                                <i class="fa-solid fa-ruler-vertical absolute right-0 top-2 text-slate-300 text-2xl"></i>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full bg-coral text-white font-bold py-5 rounded-xl hover:bg-red-500 transition shadow-xl shadow-red-100 transform active:scale-[0.98]">
+                            HITUNG BMI
+                        </button>
+                    </form>
+                </div>
+                <div class="bg-red-50 w-full md:w-1/2 p-10 md:p-14 flex flex-col justify-center items-center text-center text-slate-700 relative overflow-hidden">
+                    <div id="resultContainer" class="hidden relative z-10 w-full flex flex-col items-center">
+                        <div class="mb-6 w-48 h-48 flex items-center justify-center">
+                            <img id="bmiImage" src="" alt="Hasil BMI" class="max-w-full max-h-full object-contain drop-shadow-xl animate-fade-in">
+                        </div>
+                        <p class="text-coral text-sm font-bold uppercase tracking-widest mb-2">BMI Kamu:</p>
+                        <h3 id="bmiValue" class="text-6xl font-black mb-4 tracking-tighter text-slate-800">0.0</h3>
+                        <div id="bmiStatusBadge" class="inline-block px-8 py-3 rounded-full font-bold bg-white text-slate-800 mb-6 shadow-md border border-red-100">
+                            -
+                        </div>
+                        <p id="bmiAdvice" class="text-sm opacity-90 leading-relaxed px-4"></p>
+                    </div>
+                    <div id="defaultView" class="opacity-30 relative z-10 text-coral">
+                        <i class="fa-solid fa-calculator text-7xl mb-6"></i>
+                        <p class="font-bold text-lg">Hasil akan muncul di sini</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 7. KONSULTASI SECTION (CORAL) - NEW SECTION ADDED -->
+    <section id="konsultasi" class="min-h-screen snap-start flex flex-col justify-center bg-coral text-white relative overflow-hidden pt-20">
+        <!-- Decoration -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 30px 30px;"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 w-full text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white">KONSULTASI DOKTER</h2>
+            <div class="w-24 h-1 bg-white mx-auto mb-6 rounded-full"></div>
+            <p class="text-lg text-white/90 mb-16 max-w-2xl mx-auto">Jangan ragu untuk berkonsultasi dengan ahli gizi terbaik kami untuk mendapatkan panduan diet yang tepat dan sehat.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Dokter 1 -->
+                <div class="bg-white rounded-[2rem] p-8 shadow-xl hover:shadow-2xl transition hover:-translate-y-2 group text-left flex flex-col">
+                    <div class="flex items-center gap-6 mb-6">
+                        <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center text-coral text-3xl font-bold border-2 border-red-50">
+                            <i class="fa-solid fa-user-doctor"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800">Dr. Andi Santoso</h3>
+                            <p class="text-coral text-sm font-semibold">Spesialis Gizi Klinik</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 mb-8 flex-grow">
+                        <div class="flex items-center text-slate-500 text-sm">
+                            <i class="fa-solid fa-briefcase w-6 text-center text-coral/70"></i>
+                            <span>10 Tahun Pengalaman</span>
+                        </div>
+                        <div class="flex items-center text-slate-500 text-sm">
+                            <i class="fa-solid fa-star w-6 text-center text-yellow-400"></i>
+                            <span>4.9 (120 Review)</span>
+                        </div>
+                    </div>
+                    <button onclick="consultDoctor('Dr. Andi Santoso')" class="w-full bg-coral text-white font-bold py-3 rounded-xl hover:bg-red-500 transition shadow-lg shadow-red-200 mt-auto">
+                        Chat Sekarang
+                    </button>
+                </div>
+
+                <!-- Dokter 2 -->
+                <div class="bg-white rounded-[2rem] p-8 shadow-xl hover:shadow-2xl transition hover:-translate-y-2 group text-left flex flex-col">
+                    <div class="flex items-center gap-6 mb-6">
+                        <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center text-coral text-3xl font-bold border-2 border-red-50">
+                            <i class="fa-solid fa-user-doctor"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800">Dr. Siti Aminah</h3>
+                            <p class="text-coral text-sm font-semibold">Ahli Nutrisi Diet</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 mb-8 flex-grow">
+                        <div class="flex items-center text-slate-500 text-sm">
+                            <i class="fa-solid fa-briefcase w-6 text-center text-coral/70"></i>
+                            <span>8 Tahun Pengalaman</span>
+                        </div>
+                        <div class="flex items-center text-slate-500 text-sm">
+                            <i class="fa-solid fa-star w-6 text-center text-yellow-400"></i>
+                            <span>4.8 (95 Review)</span>
+                        </div>
+                    </div>
+                    <button onclick="consultDoctor('Dr. Siti Aminah')" class="w-full bg-coral text-white font-bold py-3 rounded-xl hover:bg-red-500 transition shadow-lg shadow-red-200 mt-auto">
+                        Chat Sekarang
+                    </button>
+                </div>
+
+                <!-- Dokter 3 -->
+                <div class="bg-white rounded-[2rem] p-8 shadow-xl hover:shadow-2xl transition hover:-translate-y-2 group text-left flex flex-col">
+                    <div class="flex items-center gap-6 mb-6">
+                        <div class="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center text-coral text-3xl font-bold border-2 border-red-50">
+                            <i class="fa-solid fa-user-doctor"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800">Dr. Budi Pratama</h3>
+                            <p class="text-coral text-sm font-semibold">Konsultan Obesitas</p>
+                        </div>
+                    </div>
+                    <div class="space-y-3 mb-8 flex-grow">
+                        <div class="flex items-center text-slate-500 text-sm">
+                            <i class="fa-solid fa-briefcase w-6 text-center text-coral/70"></i>
+                            <span>15 Tahun Pengalaman</span>
+                        </div>
+                        <div class="flex items-center text-slate-500 text-sm">
+                            <i class="fa-solid fa-star w-6 text-center text-yellow-400"></i>
+                            <span>5.0 (200 Review)</span>
+                        </div>
+                    </div>
+                    <button onclick="consultDoctor('Dr. Budi Pratama')" class="w-full bg-coral text-white font-bold py-3 rounded-xl hover:bg-red-500 transition shadow-lg shadow-red-200 mt-auto">
+                        Chat Sekarang
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (SNAP START) -->
+    <footer class="snap-start bg-white text-slate-600 py-16 text-center border-t border-red-50 flex flex-col justify-center min-h-[50vh]">
+        <div class="flex justify-center items-center gap-2 mb-6">
+            <span class="text-3xl font-bold tracking-tighter text-coral">obishealthpedia</span>
+        </div>
+        <div class="flex justify-center gap-6 mb-8 text-slate-400">
+            <a href="#" class="hover:text-coral transition"><i class="fa-brands fa-instagram text-xl"></i></a>
+            <a href="#" class="hover:text-coral transition"><i class="fa-brands fa-twitter text-xl"></i></a>
+            <a href="#" class="hover:text-coral transition"><i class="fa-brands fa-facebook text-xl"></i></a>
+        </div>
+        <p class="text-slate-400 text-sm">&copy; 2024 ObisHealthPedia. All Rights Reserved.</p>
+    </footer>
+
+    <!-- MODAL DETAIL -->
+    <div id="detailModal" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity" onclick="closeFactorModal()"></div>
+        <div class="relative flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-[2rem] shadow-2xl w-full max-w-lg p-8 md:p-10 transform scale-95 transition-all duration-300 animate-fade-in border-4 border-red-50 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-coral/10 rounded-bl-full -mr-8 -mt-8"></div>
+                <button onclick="closeFactorModal()" class="absolute top-6 right-6 text-slate-400 hover:text-coral transition">
+                    <i class="fa-solid fa-xmark text-2xl"></i>
+                </button>
+                <div id="modalIcon" class="text-6xl text-coral mb-6 text-center"></div>
+                <h3 id="modalTitle" class="text-2xl md:text-3xl font-bold text-slate-800 mb-6 text-center tracking-tight"></h3>
+                <div class="w-16 h-1 bg-coral mx-auto mb-6 rounded-full"></div>
+                <div class="text-slate-600 leading-loose text-justify text-sm md:text-base font-light" id="modalDesc">
+                </div>
+                <div class="mt-8 text-center">
+                    <button onclick="closeFactorModal()" class="bg-coral text-white px-8 py-3 rounded-full font-bold shadow-lg hover:bg-red-500 transition transform active:scale-95">
+                        Mengerti
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
